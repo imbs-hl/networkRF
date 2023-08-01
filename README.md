@@ -12,4 +12,34 @@ library(devtools)
 devtools::install_github("imbs-hl/networkRF")
 ```
 
+## Examples
+The package includes functions to generate synthetic RNA-Seq data along with underlying gene network. The following codes provide a simple example to generate synthetic datasets and conduct analysis for disease gene identification and predictive model construction. More details on the functions and their arguments, please refer to the help pages of the package.
+```
+library(networkRF)
+
+# scenario setting for synthetic datasets
+seed = 1111
+num.sample = 200
+num.var = 1000
+scenario = 1
+AveEffect = 0.5
+method = "uniform"
+
+# simulate synthetic datasets
+sim.data <- gen_data(num.sample = num.sample,
+                     num.var = num.var,
+                     scenario = scenario, 
+                     AveEffect = AveEffect)
+
+# analyze one data set
+res.one.rep <- networkRF(x = sim.data$rna[[1]]$x_train,
+                         y = sim.data$rna[[1]]$y_train,
+                         network = sim.data$network,
+                         method = method,
+                         min.num.gene = 20,
+                         num.trees = 2000, 
+                         # importance = "permutation",
+                         seed = seed)
+```
+
 If you find any bugs, or if you experience any crashes, please report to us.
