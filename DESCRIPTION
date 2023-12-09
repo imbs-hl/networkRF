@@ -1,7 +1,7 @@
 Package: networkRF
 Type: Package
 Title: Network-guided random forest for disease gene discovery
-Version: 0.1.3
+Version: 0.1.4
 Author: Jianchang Hu <jianchang.hu@uni-luebeck.de>
 Maintainer: Jianchang Hu <jianchang.hu@uni-luebeck.de>
 Description: The package implements network-guided random forests (RFs) and a couple of other variants of random forests where the sampling probability of predictors in the decision tree construction of not necessarily uniform. The package also provides functions to conduct simulation studies with synthetic RNA-Seq gene expression data and underlying gene network to demonstrate the effects of incorporating network information into RF construction for disease gene discovery. Two TCGA breast cancer datasets are also included in the package, the one from microarray and the other from RNA-Seq technology. The phenotype is PR status and all expression data has been log-transformed and standardized to have mean 0 and standard deviation 1.
